@@ -181,6 +181,8 @@ LOGGING = {
         },
     }
 }
+# 确保定义用户模型类能被Django的认证系统所识别
+AUTH_USER_MODEL = 'users.User'
 
 REST_FRAMEWORK = {
     # 异常处理
