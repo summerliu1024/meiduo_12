@@ -18,6 +18,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 sys.path.insert(0, os.path.join(BASE_DIR, 'apps'))
 
+print(sys.path)
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
@@ -104,7 +106,7 @@ CACHES = {
     },
     "verify_codes": {
         "BACKEND": "django_redis.cache.RedisCache",
-        "LOCATION": "redis://10.211.55.5:6379/2",
+        "LOCATION": "redis://127.0.0.1:6379/2",
         "OPTIONS": {
             "CLIENT_CLASS": "django_redis.client.DefaultClient",
         }
@@ -194,5 +196,5 @@ AUTH_USER_MODEL = 'users.User'
 
 REST_FRAMEWORK = {
     # 异常处理
-    'EXCEPTION_HANDLER': 'meiduo_mall_12.utils.exceptions.exception_handler',
+    'EXCEPTION_HANDLER': 'meiduo_mall_12.meiduo_mall_12.utils.exceptions.exception_handler',
 }
