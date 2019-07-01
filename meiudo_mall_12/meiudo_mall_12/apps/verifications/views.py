@@ -61,10 +61,10 @@ class SMSCodeView(GenericAPIView):
         pl.setex("send_flag_%s" % mobile, constants.SEND_SMS_CODE_INTERVAL, 1)
         pl.execute()
 
-        # 发送短信验证码
-        sms_code_expires = str(constants.SMS_CODE_REDIS_EXPIRES // 60)
-        ccp = CCP()
-        ccp.send_template_sms(mobile, [sms_code, sms_code_expires], SMS_CODE_TEMP_ID)
+        # # 发送短信验证码
+        # sms_code_expires = str(constants.SMS_CODE_REDIS_EXPIRES // 60)
+        # ccp = CCP()
+        # ccp.send_template_sms(mobile, [sms_code, sms_code_expires], SMS_CODE_TEMP_ID)
 
         # 发送短信
         try:
