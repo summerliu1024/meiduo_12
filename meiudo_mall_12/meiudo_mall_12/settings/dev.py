@@ -198,7 +198,7 @@ AUTH_USER_MODEL = 'users.User'
 
 REST_FRAMEWORK = {
     # 异常处理
-    'EXCEPTION_HANDLER': 'meiduo_mall_12.meiduo_mall_12.utils.exceptions.exception_handler',
+    'EXCEPTION_HANDLER': ' meiudo_mall_12.utils.exceptions.exception_handler',
 }
 
 # CORS

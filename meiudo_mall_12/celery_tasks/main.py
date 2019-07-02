@@ -4,7 +4,7 @@ from celery import Celery
 import os
 
 if not os.getenv('DJANGO_SETTINGS_MODULE'):
-    os.environ['DJANGO_SETTINGS_MODULE'] = 'meiduo_mall_12.settings.dev'
+    os.environ['DJANGO_SETTINGS_MODULE'] = 'meiudo_mall_12.settings.dev'
 
 # 创建Celery应用
 celery_app = Celery("meiduo")
@@ -15,4 +15,4 @@ celery_app.config_from_object('celery_tasks.config')
 
 # 导入任务
 
-celery_app.autodiscover_tasks('celery_tasks.sms')
+celery_app.autodiscover_tasks(['celery_tasks.sms'])
