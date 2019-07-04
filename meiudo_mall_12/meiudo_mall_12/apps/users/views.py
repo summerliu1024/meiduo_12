@@ -26,3 +26,21 @@ class UsernameCountView(APIView):
         }
 
         return Response(data)
+
+# url(r'^mobiles/(?P<mobile>1[3-9]\d{9})/count/$', views.MobileCountView.as_view()),
+class MobileCountView(APIView):
+    """
+    手机号数量
+    """
+    def get(self, request, mobile):
+        """
+        获取指定手机号数量
+        """
+        count = User.objects.filter(mobile=mobile).count()
+
+        data = {
+            'mobile': mobile,
+            'count': count
+        }
+
+        return Response(data)
