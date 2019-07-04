@@ -97,6 +97,7 @@ var vm = new Vue({
                 this.error_check_password = false;
             }
         },
+        // 检查手机号
         check_phone: function () {
             var re = /^1[345789]\d{9}$/;
             if (re.test(this.mobile)) {
@@ -105,7 +106,22 @@ var vm = new Vue({
                 this.error_phone_message = '您输入的手机号格式不正确';
                 this.error_phone = true;
             }
-
+            if (this.error_phone == false) {
+                axios.get(this.host + '/mobiles/' + this.mobile + '/count/', {
+                    responseType: 'json'
+                })
+                    .then(response => {
+                        if (response.data.count > 0) {
+                            this.error_phone_message = '手机号已存在';
+                            this.error_phone = true;
+                        } else {
+                            this.error_phone = false;
+                        }
+                    })
+                    .catch(error => {
+                        console.log(error.response.data);
+                    })
+            }
         },
         check_image_code: function () {
             if (!this.image_code) {
