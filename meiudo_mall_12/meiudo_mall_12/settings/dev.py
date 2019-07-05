@@ -195,6 +195,10 @@ LOGGING = {
 }
 # 确保定义用户模型类能被Django的认证系统所识别
 AUTH_USER_MODEL = 'users.User'
+# 自定义认证后端
+AUTHENTICATION_BACKENDS = [
+    'users.utils.UsernameMobileAuthBackend',
+]
 
 REST_FRAMEWORK = {
     # 异常处理
