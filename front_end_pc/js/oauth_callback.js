@@ -2,7 +2,7 @@ var vm = new Vue({
     el: '#app',
     data: {
         host: host,
-        is_show_waiting: true,
+        is_show_waiting: false,
 
         error_password: false,
         error_phone: false,
@@ -25,6 +25,7 @@ var vm = new Vue({
         access_token: ''
     },
     mounted: function () {
+        this.generate_image_code();
 
     },
     methods: {
