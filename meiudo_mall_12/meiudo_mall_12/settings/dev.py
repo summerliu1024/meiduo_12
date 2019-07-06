@@ -203,7 +203,7 @@ AUTHENTICATION_BACKENDS = [
 
 REST_FRAMEWORK = {
     # 异常处理
-    'EXCEPTION_HANDLER': ' meiudo_mall_12.utils.exceptions.exception_handler',
+    'EXCEPTION_HANDLER': 'meiudo_mall_12.utils.exceptions.exception_handler',
     # 认证
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
