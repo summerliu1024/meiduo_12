@@ -259,5 +259,5 @@ REST_FRAMEWORK_EXTENSIONS = {
 DEFAULT_FILE_STORAGE = 'meiudo_mall_12.utils.fastdfs.fdfs_storage.FastDFSStorage'
 
 # FastDFS
-FDFS_URL = 'http://image.meiduo.site:8888/'
+FDFS_URL = 'http://image.meiduo.site:8888/'  # 这里需要在hosts文件里面映射到127.0.0.1
 FDFS_CLIENT_CONF = os.path.join(BASE_DIR, 'utils/fastdfs/client.conf')
