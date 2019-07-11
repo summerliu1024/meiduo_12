@@ -1,5 +1,6 @@
 var vm = new Vue({
     el: '#app',
+    //vue与Django模板语法冲突解决
     delimiters: ['[[', ']]'],
     data: {
         host,
