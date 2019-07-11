@@ -8,6 +8,14 @@
 3.cd到celery_tasks文件夹，开启celery异步任务
 celery -A celery_tasks.main worker -l info
 
-4.运行项目manage.py文件
+4.运行fastdfs 
 
+tracker 需要修改映射目录
 
+docker run -dti --network=host --name tracker -v /var/fdfs/tracker:/var/fdfs delron/fastdfs tracker
+
+storage 需要修改trackerip地址和映射目录
+
+docker run -dti --network=host --name storage -e TRACKER_SERVER=10.211.55.5:22122 -v /var/fdfs/storage:/var/fdfs delron/fastdfs storage
+
+5.运行项目manage.py文件
