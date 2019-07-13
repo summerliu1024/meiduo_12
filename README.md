@@ -22,5 +22,6 @@ docker run -dti --network=host --name storage -e TRACKER_SERVER=10.211.55.5:2212
 
 docker run -dti --network=host --name=elasticsearch -v /home/python/Desktop/elasticsearch-2.4.6/config:/usr/share/elasticsearch/config delron/elasticsearch-ik:2.4.6-1.0
 
+安装drf-haystack时候如果安装失败，需要安装 setuptools-scm
 
 6.运行项目manage.py文件
