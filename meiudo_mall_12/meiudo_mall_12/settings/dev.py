@@ -268,7 +268,7 @@ REST_FRAMEWORK_EXTENSIONS = {
 DEFAULT_FILE_STORAGE = 'meiudo_mall_12.utils.fastdfs.fdfs_storage.FastDFSStorage'
 
 # FastDFS
-FDFS_URL = 'http://image.meiduo.site:8888/'  # 这里需要在hosts文件里面映射到127.0.0.1
+FDFS_URL = 'http://image.meiduo.site:8888/'  # 这里需要在hosts文件里面映射到自己的IP地址
 FDFS_CLIENT_CONF = os.path.join(BASE_DIR, 'utils/fastdfs/client.conf')
 
 # 富文本编辑器ckeditor配置
@@ -288,7 +288,7 @@ GENERATED_STATIC_HTML_FILES_DIR = os.path.join(os.path.dirname(os.path.dirname(B
 CRONJOBS = [
     # 每5分钟执行一次生成主页静态文件
     # ('*/5 * * * *', 'contents.crons.generate_static_index_html', '>> /Users/delron/Desktop/meiduo_mall/logs/crontab.log')
-    ('*/1 * * * *', 'contents.crons.generate_static_index_html',
+    ('*/1 * * * *', 'contents.crons.generate_static_index_html >/dev/null 2>&1',
      '>> ' + os.path.join(os.path.dirname(BASE_DIR), "logs/crontab.log"))
 ]
 
