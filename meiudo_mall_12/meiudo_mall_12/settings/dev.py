@@ -224,7 +224,7 @@ REST_FRAMEWORK = {
     ),
 
     # 分页
-    'DEFAULT_PAGINATION_CLASS': 'meiduo_mall_12.utils.pagination.StandardResultsSetPagination',
+    'DEFAULT_PAGINATION_CLASS': 'meiudo_mall_12.utils.pagination.StandardResultsSetPagination',
 
 }
 # 过期时间
