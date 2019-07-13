@@ -222,6 +222,10 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.SessionAuthentication',
         'rest_framework.authentication.BasicAuthentication',
     ),
+
+    # 分页
+    'DEFAULT_PAGINATION_CLASS': 'meiduo_mall_12.utils.pagination.StandardResultsSetPagination',
+
 }
 # 过期时间
 JWT_AUTH = {
