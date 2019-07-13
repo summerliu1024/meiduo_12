@@ -293,7 +293,7 @@ GENERATED_STATIC_HTML_FILES_DIR = os.path.join(os.path.dirname(os.path.dirname(B
 CRONJOBS = [
     # 每5分钟执行一次生成主页静态文件
     # ('*/5 * * * *', 'contents.crons.generate_static_index_html', '>> /Users/delron/Desktop/meiduo_mall/logs/crontab.log')
-    ('*/1 * * * *', 'contents.crons.generate_static_index_html >/dev/null 2>&1',
+    ('*/1 * * * *', 'contents.crons.generate_static_index_html',
      '>> ' + os.path.join(os.path.dirname(BASE_DIR), "logs/crontab.log"))
 ]
 
