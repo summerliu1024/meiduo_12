@@ -24,4 +24,8 @@ docker run -dti --network=host --name=elasticsearch -v /home/python/Desktop/elas
 
 安装drf-haystack时候如果安装失败，需要安装 setuptools-scm
 
-6.运行项目manage.py文件
+6.运行定时任务定时生成index.html 
+
+python manage.py crontab add 
+
+7.运行项目manage.py文件
