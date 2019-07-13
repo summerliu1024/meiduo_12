@@ -2,12 +2,14 @@ from django.shortcuts import render
 
 # Create your views here.
 from drf_haystack.serializers import HaystackSerializer
+from drf_haystack.viewsets import HaystackViewSet
 
 from rest_framework.filters import OrderingFilter
 from rest_framework.generics import ListAPIView
 
 from goods.models import SKU
 from goods.search_indexes import SKUIndex
+from goods.serializers import SKUIndexSerializer
 from users.serializers import SKUSerializer
 
 
@@ -24,11 +26,10 @@ class SKUListView(ListAPIView):
         return SKU.objects.filter(category_id=category_id, is_launched=True)
 
 
-class SKUIndexSerializer(HaystackSerializer):
+class SKUSearchViewSet(HaystackViewSet):
     """
-    SKU索引结果数据序列化器
+    SKU搜索
     """
+    index_models = [SKU]
 
-    class Meta:
-        index_classes = [SKUIndex]
-        fields = ('text', 'id', 'name', 'price', 'default_image_url', 'comments')
+    serializer_class = SKUIndexSerializer
