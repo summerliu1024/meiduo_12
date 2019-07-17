@@ -40,6 +40,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'xadmin',
+    'crispy_forms',
+    'reversion',
     'rest_framework',
     'corsheaders',
     'ckeditor',  # 富文本编辑器
